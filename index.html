@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumière — Fine Dining & Culinary Art</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Raleway:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Particles & Stars Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Fog overlay -->
+  <div class="fog-container">
+    <div class="fog fog-1"></div>
+    <div class="fog fog-2"></div>
+  </div>
+
+  <!-- Page transition overlay -->
+  <div class="page-transition" id="pageTransition"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="nav-logo" data-page="home">
+        <span class="logo-icon">&#9834;</span>
+        <span class="logo-text">Lumière</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link active" data-page="home">Home</a></li>
+        <li><a href="#menu" class="nav-link" data-page="menu">Menu</a></li>
+        <li><a href="#about" class="nav-link" data-page="about">About Us</a></li>
+        <li><a href="#gallery" class="nav-link" data-page="gallery">Gallery</a></li>
+        <li><a href="#contact" class="nav-link" data-page="contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="nav-cta">Book a Table</a>
+    </div>
+  </nav>
+
+  <!-- ===== HOME PAGE ===== -->
+  <section class="page active" id="home" data-page="home">
+    <!-- Hero -->
+    <div class="hero" data-parallax="0.3">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1920&q=80" alt="Fine dining" loading="eager">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="hero-content animate-on-scroll">
+        <p class="hero-subtitle glow-text">~ An Unforgettable Experience ~</p>
+        <h1 class="hero-title">Where Culinary<br><em>Art</em> Meets <em>Magic</em></h1>
+        <p class="hero-desc">Indulge in a symphony of flavors crafted with passion. Every dish tells a story, every moment becomes a memory.</p>
+        <div class="hero-actions">
+          <a href="#menu" class="btn btn-primary glow-btn">Explore Menu</a>
+          <a href="#contact" class="btn btn-outline">Book a Table</a>
+        </div>
+      </div>
+      <div class="scroll-indicator">
+        <div class="mouse">
+          <div class="mouse-wheel"></div>
+        </div>
+        <span>Scroll to discover</span>
+      </div>
+    </div>
+
+    <!-- Features Strip -->
+    <div class="features-strip">
+      <div class="feature-item animate-on-scroll">
+        <div class="feature-icon glow-text">&#127860;</div>
+        <h3>Award-Winning Cuisine</h3>
+        <p>Chef-curated seasonal menus using locally sourced, organic ingredients.</p>
+      </div>
+      <div class="feature-item animate-on-scroll">
+        <div class="feature-icon glow-text">&#127863;</div>
+        <h3>Sommelier's Selection</h3>
+        <p>An extensive cellar of rare wines and handcrafted cocktails to complement every dish.</p>
+      </div>
+      <div class="feature-item animate-on-scroll">
+        <div class="feature-icon glow-text">&#9734;</div>
+        <h3>Micaron-Worthy Service</h3>
+        <p>Impeccable, personalized service in an atmosphere of refined elegance.</p>
+      </div>
+    </div>
+
+    <!-- Reservation CTA -->
+    <div class="reservation-cta-section">
+      <div class="reservation-cta-inner">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&q=80" alt="Restaurant ambiance" class="reservation-cta-img animate-on-scroll">
+        <div class="reservation-cta-text animate-on-scroll">
+          <h2>Your Table Awaits</h2>
+          <p>Reserve your evening and let us take you on a culinary journey. Intimate dinners, grand celebrations, or a night of pure indulgence.</p>
+          <a href="#contact" class="btn btn-primary glow-btn">Reserve Now</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials-section">
+      <h2 class="section-title animate-on-scroll"><span class="glow-text">What Our Guests</span> Say</h2>
+      <div class="testimonials-grid">
+        <div class="glass-card testimonial-card animate-on-scroll">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"An absolute masterpiece of dining. Every course was a revelation. The truffle risotto alone is worth the visit."</p>
+          <div class="testimonial-author">
+            <strong>Eleanor Whitfield</strong>
+            <span>Food & Travel Magazine</span>
+          </div>
+        </div>
+        <div class="glass-card testimonial-card animate-on-scroll">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"From the amuse-bouche to the petit fours, every detail was perfection. This is what fine dining should be."</p>
+          <div class="testimonial-author">
+            <strong>James Harrington</strong>
+            <span>Celebrity Chef & Critic</span>
+          </div>
+        </div>
+        <div class="glass-card testimonial-card animate-on-scroll">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-text">"We celebrated our anniversary here and it exceeded every expectation. Truly magical and unforgettable."</p>
+          <div class="testimonial-author">
+            <strong>Sofia & Marcus Chen</strong>
+            <span>Loyal Guests Since 2019</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== MENU PAGE ===== -->
+  <section class="page" id="menu" data-page="menu">
+    <div class="page-header" data-parallax="0.4">
+      <div class="page-header-bg">
+        <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&q=80" alt="Gourmet dishes" loading="lazy">
+        <div class="page-header-overlay"></div>
+      </div>
+      <div class="page-header-content animate-on-scroll">
+        <h1 class="page-header-title">Our <em>Menu</em></h1>
+        <p class="page-header-subtitle">Each plate is a canvas. Each flavor, a masterpiece.</p>
+      </div>
+    </div>
+
+    <!-- Menu Filters -->
+    <div class="menu-filters animate-on-scroll">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="starters">Starters</button>
+      <button class="filter-btn" data-filter="mains">Mains</button>
+      <button class="filter-btn" data-filter="desserts">Desserts</button>
+      <button class="filter-btn" data-filter="drinks">Drinks</button>
+    </div>
+
+    <!-- Menu Grid -->
+    <div class="menu-grid">
+      <!-- Starters -->
+      <div class="glass-card menu-card animate-on-scroll" data-category="starters">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1626200419199-391ae4be7a41?w=600&q=80" alt="Truffle Burrata" loading="lazy">
+          <div class="menu-card-badge">Chef's Pick</div>
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <h3>Truffle Burrata</h3>
+            <span class="menu-price">$28</span>
+          </div>
+          <p>Creamy burrata with black truffle shavings, heirloom tomatoes, aged balsamic, and micro basil.</p>
+          <button class="btn btn-primary btn-sm glow-btn order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <div class="glass-card menu-card animate-on-scroll" data-category="starters">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=600&q=80" alt="Seared Scallops" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <h3>Seared Scallops</h3>
+            <span class="menu-price">$34</span>
+          </div>
+          <p>Pan-seared diver scallops, cauliflower purée, brown butter, and crispy capers.</p>
+          <button class="btn btn-primary btn-sm glow-btn order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <div class="glass-card menu-card animate-on-scroll" data-category="starters">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600&q=80" alt="Wagyu Tartare" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <h3>A5 Wagyu Tartare</h3>
+            <span class="menu-price">$42</span>
+          </div>
+          <p>Hand-cut A5 wagyu, quail egg yolk, shallots, caper berries, and gold leaf.</p>
+          <button class="btn btn-primary btn-sm glow-btn order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <!-- Mains -->
+      <div class="glass-card menu-card animate-on-scroll" data-category="mains">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1558030006-450675393462?w=600&q=80" alt="Wagyu Steak" loading="lazy">
+          <div class="menu-card-badge">Signature</div>
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <h3>Wagyu Ribeye</h3>
+            <span class="menu-price">$85</span>
+          </div>
+          <p>12oz Australian wagyu, bone marrow butter, roasted garlic jus, truffle frites.</p>
+          <button class="btn btn-primary btn-sm glow-btn order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <div class="glass-card menu-card animate-on-scroll" data-category="mains">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1545247181-516773cae754?w=600&q=80" alt="Lobster Thermidor" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <h3>Lobster Thermidor</h3>
+            <span class="menu-price">$72</span>
+          </div>
+          <p>Maine lobster, cognac cream sauce, gruyère crust, saffron rice, and asparagus.</p>
+          <button class="btn btn-primary btn-sm glow-btn order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <div class="glass-card menu-card animate-on-scroll" data-category="mains">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?w=600&q=80" alt="Duck Confit" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <h3>Duck Confit</h3>
+            <span class="menu-price">$56</span>
+          </div>
+          <p>Slow-cooked duck leg, cherry gastrique, potato pavé, and wilted greens.</p>
+          <button class="btn btn-primary btn-sm glow-btn order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <!-- Desserts -->
+      <div class="glass-card menu-card animate-on-scroll" data-category="desserts">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&q=80" alt="Chocolate Soufflé" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <h3>Chocolate Soufflé</h3>
+            <span class="menu-price">$22</span>
+          </div>
+          <p>Dark Valrhona chocolate, crème anglaise, and Madagascar vanilla bean ice cream.</p>
+          <button class="btn btn-primary btn-sm glow-btn order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <div class="glass-card menu-card animate-on-scroll" data-category="desserts">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80" alt="Crème Brûlée" loading="lazy">
+          <div class="menu-card-badge">Classic</div>
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <h3>Tahitian Crème Brûlée</h3>
+            <span class="menu-price">$18</span>
+          </div>
+          <p>Madagascar vanilla custard, caramelized sugar crust, fresh berries.</p>
+          <button class="btn btn-primary btn-sm glow-btn order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <div class="glass-card menu-card animate-on-scroll" data-category="desserts">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80" alt="Tarte Tatin" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <h3>Tarte Tatin</h3>
+            <span class="menu-price">$20</span>
+          </div>
+          <p>Caramelized apple tart, calvados cream, and salted caramel drizzle.</p>
+          <button class="btn btn-primary btn-sm glow-btn order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <!-- Drinks -->
+      <div class="glass-card menu-card animate-on-scroll" data-category="drinks">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=600&q=80" alt="Signature Cocktail" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <h3>Lumière Elixir</h3>
+            <span class="menu-price">$24</span>
+          </div>
+          <p>Handcrafted cocktail with elderflower liqueur, butterfly pea gin, champagne foam.</p>
+          <button class="btn btn-primary btn-sm glow-btn order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <div class="glass-card menu-card animate-on-scroll" data-category="drinks">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80" alt="Wine Selection" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <h3>Sommelier's Wine Pairing</h3>
+            <span class="menu-price">$95</span>
+          </div>
+          <p>Five-glass flight of rare wines, expertly paired with your courses by our sommelier.</p>
+          <button class="btn btn-primary btn-sm glow-btn order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <div class="glass-card menu-card animate-on-scroll" data-category="drinks">
+        <div class="menu-card-img">
+          <img src="https://images.unsplash.com/photo-1536935338788-846bb9981813?w=600&q=80" alt="Champagne" loading="lazy">
+        </div>
+        <div class="menu-card-body">
+          <div class="menu-card-header">
+            <h3>Dom Pérignon 2013</h3>
+            <span class="menu-price">$85</span>
+          </div>
+          <p>The pinnacle of champagne excellence. Notes of brioche, white flowers, and citrus.</p>
+          <button class="btn btn-primary btn-sm glow-btn order-btn">Order Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Set Menu -->
+    <div class="set-menu-section">
+      <div class="glass-card set-menu-card animate-on-scroll">
+        <div class="set-menu-badge">Tasting Experience</div>
+        <h2>The Lumière <em>Dégustation</em></h2>
+        <p class="set-menu-desc">A seven-course culinary journey through our finest creations, guided by Chef Laurent himself.</p>
+        <div class="set-menu-price"><span class="glow-text">$185</span> <small>per person</small></div>
+        <ul class="set-menu-list">
+          <li>Amuse-Bouche</li>
+          <li>Seasonal Tartare</li>
+          <li>Seared Diver Scallops</li>
+          <li>Intermezzo — Champagne Sorbet</li>
+          <li>Wagyu Tenderloin</li>
+          <li>Artisan Cheese Selection</li>
+          <li>Dessert Symphony</li>
+        </ul>
+        <a href="#contact" class="btn btn-primary glow-btn">Reserve the Experience</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT US PAGE ===== -->
+  <section class="page" id="about" data-page="about">
+    <div class="page-header" data-parallax="0.4">
+      <div class="page-header-bg">
+        <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=1920&q=80" alt="Chef plating" loading="lazy">
+        <div class="page-header-overlay"></div>
+      </div>
+      <div class="page-header-content animate-on-scroll">
+        <h1 class="page-header-title">Our <em>Story</em></h1>
+        <p class="page-header-subtitle">A legacy of passion, precision, and pursuit of perfection.</p>
+      </div>
+    </div>
+
+    <!-- Story Section -->
+    <div class="story-section">
+      <div class="story-grid">
+        <div class="story-image animate-on-scroll">
+          <img src="https://images.unsplash.com/photo-1577219491135-ce3907d61942?w=600&q=80" alt="Chef Laurent" loading="lazy">
+          <div class="story-image-accent"></div>
+        </div>
+        <div class="story-text animate-on-scroll">
+          <h2>The Vision of <span class="glow-text">Chef Laurent</span></h2>
+          <p>Born in Lyon, France, Chef Laurent Beaumont discovered his passion for cuisine in his grandmother's kitchen at the age of seven. After training under some of the world's most celebrated chefs — including a formative period at Noma and The French Laundry — he opened Lumière in 2015 with a singular vision: to create dishes that transcend the plate and become lasting memories.</p>
+          <p>"Cooking is an act of love. Every ingredient has a story, every plate has a purpose. At Lumière, we don't just serve food — we create moments of wonder."</p>
+          <div class="story-signature">— Chef Laurent Beaumont</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Values -->
+    <div class="values-section">
+      <h2 class="section-title animate-on-scroll"><span class="glow-text">Our</span> Philosophy</h2>
+      <div class="values-grid">
+        <div class="glass-card value-card animate-on-scroll">
+          <div class="value-icon glow-text">&#127793;</div>
+          <h3>Farm to Table</h3>
+          <p>We partner with local organic farms, ensuring every ingredient is at its peak freshness and flavor. Sustainability isn't a trend — it's our foundation.</p>
+        </div>
+        <div class="glass-card value-card animate-on-scroll">
+          <div class="value-icon glow-text">&#10024;</div>
+          <h3>Artistry in Every Dish</h3>
+          <p>Our kitchen is a studio. Each plate is composed with the precision of a painter and the passion of a poet, balancing color, texture, and taste.</p>
+        </div>
+        <div class="glass-card value-card animate-on-scroll">
+          <div class="value-icon glow-text">&#127869;</div>
+          <h3>Wine & Pairing</h3>
+          <p>Our award-winning cellar houses over 1,200 labels. Our sommelier team crafts pairings that elevate each course to a transcendent experience.</p>
+        </div>
+        <div class="glass-card value-card animate-on-scroll">
+          <div class="value-icon glow-text">&#128144;</div>
+          <h3>Unforgettable Moments</h3>
+          <p>From the first greeting to the final farewell, every detail is choreographed to make your evening extraordinary. Your story is our purpose.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team -->
+    <div class="team-section">
+      <h2 class="section-title animate-on-scroll">The <span class="glow-text">Team</span></h2>
+      <div class="team-grid">
+        <div class="glass-card team-card animate-on-scroll">
+          <div class="team-img">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80" alt="Chef Laurent" loading="lazy">
+          </div>
+          <h3>Chef Laurent Beaumont</h3>
+          <span class="team-role">Executive Chef & Founder</span>
+        </div>
+        <div class="glass-card team-card animate-on-scroll">
+          <div class="team-img">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80" alt="Head Sommelier" loading="lazy">
+          </div>
+          <h3>Isabella Moreau</h3>
+          <span class="team-role">Head Sommelier</span>
+        </div>
+        <div class="glass-card team-card animate-on-scroll">
+          <div class="team-img">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" alt="Pastry Chef" loading="lazy">
+          </div>
+          <h3>Marcus Delacroix</h3>
+          <span class="team-role">Pastry Chef</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Awards -->
+    <div class="awards-section animate-on-scroll">
+      <h2 class="section-title">Recognition & <span class="glow-text">Awards</span></h2>
+      <div class="awards-grid">
+        <div class="glass-card award-card">
+          <div class="award-year glow-text">2024</div>
+          <h3>Two Michelin Stars</h3>
+          <p>Michelin Guide</p>
+        </div>
+        <div class="glass-card award-card">
+          <div class="award-year glow-text">2024</div>
+          <h3>Best Fine Dining</h3>
+          <p>World Restaurant Awards</p>
+        </div>
+        <div class="glass-card award-card">
+          <div class="award-year glow-text">2023</div>
+          <h3>Wine List of the Year</h3>
+          <p>Wine Spectator</p>
+        </div>
+        <div class="glass-card award-card">
+          <div class="award-year glow-text">2023</div>
+          <h3>Chef of the Year</h3>
+          <p>Gault & Millau</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALLERY PAGE ===== -->
+  <section class="page" id="gallery" data-page="gallery">
+    <div class="page-header" data-parallax="0.4">
+      <div class="page-header-bg">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=1920&q=80" alt="Beautiful plated dish" loading="lazy">
+        <div class="page-header-overlay"></div>
+      </div>
+      <div class="page-header-content animate-on-scroll">
+        <h1 class="page-header-title">Visual <em>Feast</em></h1>
+        <p class="page-header-subtitle">A glimpse into the artistry behind every creation.</p>
+      </div>
+    </div>
+
+    <div class="gallery-filters animate-on-scroll">
+      <button class="filter-btn active" data-gfilter="all">All</button>
+      <button class="filter-btn" data-gfilter="dishes">Dishes</button>
+      <button class="filter-btn" data-gfilter="ambiance">Ambiance</button>
+      <button class="filter-btn" data-gfilter="kitchen">Kitchen</button>
+      <button class="filter-btn" data-gfilter="wine">Wine & Bar</button>
+    </div>
+
+    <div class="gallery-grid">
+      <div class="gallery-item animate-on-scroll" data-gcategory="dishes">
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=600&q=80" alt="Plated dish" loading="lazy">
+        <div class="gallery-overlay"><h4>Wagyu Perfection</h4></div>
+      </div>
+      <div class="gallery-item gallery-tall animate-on-scroll" data-gcategory="ambiance">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600&q=80" alt="Restaurant interior" loading="lazy">
+        <div class="gallery-overlay"><h4>The Dining Room</h4></div>
+      </div>
+      <div class="gallery-item animate-on-scroll" data-gcategory="dishes">
+        <img src="https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?w=600&q=80" alt="Gourmet dish" loading="lazy">
+        <div class="gallery-overlay"><h4>Garden Harvest</h4></div>
+      </div>
+      <div class="gallery-item animate-on-scroll" data-gcategory="kitchen">
+        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=600&q=80" alt="Chef cooking" loading="lazy">
+        <div class="gallery-overlay"><h4>Behind the Pass</h4></div>
+      </div>
+      <div class="gallery-item gallery-wide animate-on-scroll" data-gcategory="ambiance">
+        <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=800&q=80" alt="Restaurant terrace" loading="lazy">
+        <div class="gallery-overlay"><h4>Evening Terrace</h4></div>
+      </div>
+      <div class="gallery-item animate-on-scroll" data-gcategory="wine">
+        <img src="https://images.unsplash.com/photo-1474722883778-792e7990302f?w=600&q=80" alt="Wine cellar" loading="lazy">
+        <div class="gallery-overlay"><h4>The Cellar</h4></div>
+      </div>
+      <div class="gallery-item animate-on-scroll" data-gcategory="dishes">
+        <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?w=600&q=80" alt="Dessert" loading="lazy">
+        <div class="gallery-overlay"><h4>Dessert Artistry</h4></div>
+      </div>
+      <div class="gallery-item gallery-tall animate-on-scroll" data-gcategory="dishes">
+        <img src="https://images.unsplash.com/photo-1432139509613-5c4255a1d4b2?w=600&q=80" alt="Elegant plating" loading="lazy">
+        <div class="gallery-overlay"><h4>Plated Elegance</h4></div>
+      </div>
+      <div class="gallery-item animate-on-scroll" data-gcategory="wine">
+        <img src="https://images.unsplash.com/photo-1566417713940-fe7c737a9ef2?w=600&q=80" alt="Cocktails" loading="lazy">
+        <div class="gallery-overlay"><h4>Craft Cocktails</h4></div>
+      </div>
+      <div class="gallery-item animate-on-scroll" data-gcategory="kitchen">
+        <img src="https://images.unsplash.com/photo-1600565193348-f74bd3c7ccdf?w=600&q=80" alt="Kitchen team" loading="lazy">
+        <div class="gallery-overlay"><h4>The Brigade</h4></div>
+      </div>
+      <div class="gallery-item gallery-wide animate-on-scroll" data-gcategory="ambiance">
+        <img src="https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=800&q=80" alt="Private dining" loading="lazy">
+        <div class="gallery-overlay"><h4>Private Dining</h4></div>
+      </div>
+      <div class="gallery-item animate-on-scroll" data-gcategory="dishes">
+        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Breakfast" loading="lazy">
+        <div class="gallery-overlay"><h4>Brunch Selection</h4></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT PAGE ===== -->
+  <section class="page" id="contact" data-page="contact">
+    <div class="page-header" data-parallax="0.4">
+      <div class="page-header-bg">
+        <img src="https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=1920&q=80" alt="Restaurant entrance" loading="lazy">
+        <div class="page-header-overlay"></div>
+      </div>
+      <div class="page-header-content animate-on-scroll">
+        <h1 class="page-header-title">Get in <em>Touch</em></h1>
+        <p class="page-header-subtitle">We'd love to hear from you. Your perfect evening begins here.</p>
+      </div>
+    </div>
+
+    <div class="contact-section">
+      <div class="contact-grid">
+        <!-- Reservation Form -->
+        <div class="glass-card reservation-form-card animate-on-scroll">
+          <h2>Reserve Your <span class="glow-text">Table</span></h2>
+          <p>Secure your evening at Lumière. For parties larger than 8, please contact us directly.</p>
+          <form class="reservation-form" id="reservationForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="resName">Full Name</label>
+                <input type="text" id="resName" placeholder="John Doe" required>
+              </div>
+              <div class="form-group">
+                <label for="resEmail">Email</label>
+                <input type="email" id="resEmail" placeholder="john@example.com" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="resPhone">Phone</label>
+                <input type="tel" id="resPhone" placeholder="+1 (555) 000-0000" required>
+              </div>
+              <div class="form-group">
+                <label for="resGuests">Guests</label>
+                <select id="resGuests" required>
+                  <option value="">Select</option>
+                  <option value="1">1 Guest</option>
+                  <option value="2">2 Guests</option>
+                  <option value="3">3 Guests</option>
+                  <option value="4">4 Guests</option>
+                  <option value="5">5 Guests</option>
+                  <option value="6">6 Guests</option>
+                  <option value="7">7 Guests</option>
+                  <option value="8">8 Guests</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="resDate">Date</label>
+                <input type="date" id="resDate" required>
+              </div>
+              <div class="form-group">
+                <label for="resTime">Time</label>
+                <select id="resTime" required>
+                  <option value="">Select</option>
+                  <option value="17:00">5:00 PM</option>
+                  <option value="17:30">5:30 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="18:30">6:30 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                  <option value="19:30">7:30 PM</option>
+                  <option value="20:00">8:00 PM</option>
+                  <option value="20:30">8:30 PM</option>
+                  <option value="21:00">9:00 PM</option>
+                  <option value="21:30">9:30 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="resOccasion">Special Occasion (Optional)</label>
+              <select id="resOccasion">
+                <option value="">None</option>
+                <option value="birthday">Birthday</option>
+                <option value="anniversary">Anniversary</option>
+                <option value="business">Business Dinner</option>
+                <option value="proposal">Proposal</option>
+                <option value="celebration">Celebration</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="resNotes">Special Requests</label>
+              <textarea id="resNotes" rows="3" placeholder="Dietary requirements, seating preferences, etc."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary glow-btn btn-full">Reserve Now</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info-side">
+          <div class="glass-card contact-info-card animate-on-scroll">
+            <h3>&#128205; Find Us</h3>
+            <p>42 Rue de la Gastronomie<br>New York, NY 10012</p>
+            <p><a href="tel:+15551234567">+1 (555) 123-4567</a></p>
+            <p><a href="mailto:reservations@lumiere.com">reservations@lumiere.com</a></p>
+          </div>
+
+          <div class="glass-card contact-info-card animate-on-scroll">
+            <h3>&#128337; Opening Hours</h3>
+            <div class="hours-grid">
+              <span>Monday</span><span class="hours-time">Closed</span>
+              <span>Tuesday – Thursday</span><span class="hours-time">5:00 PM – 10:00 PM</span>
+              <span>Friday – Saturday</span><span class="hours-time">5:00 PM – 11:00 PM</span>
+              <span>Sunday</span><span class="hours-time">10:00 AM – 3:00 PM</span>
+            </div>
+            <p class="hours-note">Sunday Brunch available 10 AM – 3 PM</p>
+          </div>
+
+          <div class="glass-card contact-info-card animate-on-scroll">
+            <h3>&#127968; Private Events</h3>
+            <p>Our private dining room accommodates up to 24 guests. Perfect for intimate celebrations, corporate dinners, and wine-tasting events.</p>
+            <a href="mailto:events@lumiere.com" class="btn btn-outline btn-sm">Inquire About Events</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Section -->
+    <div class="map-section animate-on-scroll">
+      <div class="map-placeholder">
+        <div class="map-inner glass-card">
+          <h3>&#128205; 42 Rue de la Gastronomie, New York, NY 10012</h3>
+          <p>Conveniently located in the heart of Manhattan's finest dining district. Valet parking available Thursday through Saturday.</p>
+          <a href="https://maps.google.com" target="_blank" class="btn btn-outline btn-sm">Open in Maps</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-brand">
+          <span class="logo-icon">&#9834;</span>
+          <span class="logo-text">Lumière</span>
+          <p>Where culinary art meets magic.</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <a href="#home">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About Us</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#contact">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h4>Connect</h4>
+            <a href="#">Instagram</a>
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">TripAdvisor</a>
+          </div>
+          <div class="footer-col">
+            <h4>Info</h4>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Careers</a>
+            <a href="#">Gift Cards</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 Lumière Fine Dining. All rights reserved. Crafted with passion.</p>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
